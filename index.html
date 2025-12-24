@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description"
+        content="Göktürk & Arda - 10 yıllık kardeşlik bağının hikayesi. Özel olarak hazırlanmış dijital anı defteri.">
+    <meta name="theme-color" content="#0a0a0f">
+    <meta property="og:title" content="Göktürk & Arda | Kardeş Gibi">
+    <meta property="og:description" content="10 yıllık dostluğun özel hikayesi">
+    <meta property="og:type" content="website">
+    <title>Göktürk & Arda | Kardeş Gibi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Floating Particles -->
+    <div id="particles" class="particles-container" aria-hidden="true"></div>
+
+    <!-- Preloader -->
+    <div id="preloader" class="preloader" role="alert" aria-live="polite">
+        <div class="preloader-content">
+            <div class="preloader-logo">G & A</div>
+            <div class="preloader-text">Anılar hazırlanıyor…</div>
+            <div class="preloader-bar">
+                <div class="preloader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gate Screen -->
+    <div id="gate" class="gate" aria-hidden="true">
+        <div class="gate-bg"></div>
+        <div class="gate-content">
+            <div class="gate-badge">10 Yıl</div>
+            <h1 class="gate-title">Kardeş Gibi</h1>
+            <p class="gate-subtitle">Aynı yolda yürüyen iki dost, bir ömürlük hikaye.</p>
+            <button id="gate-btn" class="btn-primary" aria-label="Hikayeye başla">
+                <span>Başlat</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content" aria-hidden="true">
+        <!-- Hero Section -->
+        <section id="hero" class="hero section">
+            <div class="hero-bg"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="hero-badge">2015 — 2025</div>
+                <h1 class="hero-title">Göktürk <span>&</span> Arda</h1>
+                <p class="hero-subtitle">Hayatın her anında yanımda olan, kardeşim gibi dostum.</p>
+                <button class="btn-secondary scroll-btn" data-target="story" aria-label="Hikayeye git">
+                    <span>Hikâyeye İn</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14M5 12l7 7 7-7" />
+                    </svg>
+                </button>
+            </div>
+            <div class="scroll-indicator" aria-hidden="true">
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Story Section - 3 Acts -->
+        <section id="story" class="story section">
+            <div class="section-header">
+                <span class="section-badge">Hikâyemiz</span>
+                <h2 class="section-title">Üç Perde, Bir Ömür</h2>
+            </div>
+
+            <!-- Act 1 -->
+            <article class="act" data-act="1">
+                <div class="act-header">
+                    <span class="act-number">Perde I</span>
+                    <h3 class="act-title">Başlangıç</h3>
+                </div>
+                <p class="act-narration">Bazı karşılaşmalar tesadüf değildir. İlk bakışta sıradan görünen o an, aslında
+                    hayatımızın en değerli hikayesinin başlangıcıydı. Tanışmak kolaydı; asıl mucize, birbirimizi
+                    anlamaktı.</p>
+                <div class="photo-grid" id="act1-photos"></div>
+            </article>
+
+            <!-- Act 2 -->
+            <article class="act" data-act="2">
+                <div class="act-header">
+                    <span class="act-number">Perde II</span>
+                    <h3 class="act-title">Yol Arkadaşlığı</h3>
+                </div>
+                <p class="act-narration">Birlikte güldük, birlikte düştük. Her zorlukta omuz omuza, her sevinçte yan
+                    yana. Bu yolculukta öğrendik ki gerçek dostluk, fırtınada bile yanında durmaktır.</p>
+                <div class="photo-grid" id="act2-photos"></div>
+            </article>
+
+            <!-- Act 3 -->
+            <article class="act" data-act="3">
+                <div class="act-header">
+                    <span class="act-number">Perde III</span>
+                    <h3 class="act-title">Kardeşlik Gibi</h3>
+                </div>
+                <p class="act-narration">Artık sadece arkadaş değiliz. Kan bağı olmadan kurulan bu bağ, seçilmiş bir
+                    ailedir. Sen benim kardeşimsin—hayatın bana verdiği en güzel hediye.</p>
+                <div class="photo-grid" id="act3-photos"></div>
+            </article>
+        </section>
+
+        <!-- Stats Section - Rakamlarla Dostluk -->
+        <section id="stats" class="stats section">
+            <div class="section-header">
+                <span class="section-badge">Rakamlarla</span>
+                <h2 class="section-title">Dostluğumuz</h2>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card" data-value="10">
+                    <div class="stat-number"><span class="counter">0</span></div>
+                    <div class="stat-label">Yıl Birlikte</div>
+                    <div class="stat-icon">🎂</div>
+                </div>
+                <div class="stat-card" data-value="3650">
+                    <div class="stat-number"><span class="counter">0</span>+</div>
+                    <div class="stat-label">Gün Yan Yana</div>
+                    <div class="stat-icon">📅</div>
+                </div>
+                <div class="stat-card" data-value="∞">
+                    <div class="stat-number"><span class="counter">∞</span></div>
+                    <div class="stat-label">Anı Paylaşıldı</div>
+                    <div class="stat-icon">💫</div>
+                </div>
+                <div class="stat-card" data-value="1">
+                    <div class="stat-number"><span class="counter">1</span></div>
+                    <div class="stat-label">Kardeş Gibi Dost</div>
+                    <div class="stat-icon">🤝</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Starry Sky Section -->
+        <section id="starry-sky" class="starry-sky section">
+            <div class="starry-canvas" id="starry-canvas"></div>
+            <div class="starry-content">
+                <div class="starry-names">
+                    <span class="starry-name">Göktürk</span>
+                    <span class="starry-ampersand">&</span>
+                    <span class="starry-name">Arda</span>
+                </div>
+                <p class="starry-quote">"Gerçek dostluk, yıldızlar kadar sonsuz ve değerlidir."</p>
+            </div>
+        </section>
+
+        <!-- Highlights Section -->
+        <section id="highlights" class="highlights section">
+            <div class="section-header">
+                <span class="section-badge">Özel Anlar</span>
+                <h2 class="section-title">Kardeşlik Anları</h2>
+            </div>
+            <div class="highlights-grid" id="highlights-grid"></div>
+        </section>
+
+        <!-- Video Section -->
+        <section id="video-section" class="video-section section">
+            <div class="section-header">
+                <span class="section-badge">Özel Gösterim</span>
+                <h2 class="section-title">Bizim Filmimiz</h2>
+            </div>
+            <div class="video-premiere">
+                <div class="video-container" id="video-container">
+                    <video id="main-video" preload="metadata" playsinline poster="">
+                        <source src="" type="video/mp4">
+                    </video>
+                    <div class="video-overlay" id="video-overlay">
+                        <button class="video-play-btn" id="video-play-btn" aria-label="Videoyu oynat">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="video-controls" id="video-controls">
+                        <button class="video-ctrl-btn" id="vid-play-pause" aria-label="Oynat/Duraklat">
+                            <svg class="play-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                            <svg class="pause-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M6 4h4v16H6zM14 4h4v16h-4z" />
+                            </svg>
+                        </button>
+                        <div class="video-progress">
+                            <input type="range" id="vid-progress" min="0" max="100" value="0"
+                                aria-label="Video ilerlemesi">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                        <button class="video-ctrl-btn" id="vid-mute" aria-label="Sesi aç/kapat">
+                            <svg class="unmuted-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3 9v6h4l5 5V4L7 9H3z" />
+                                <path d="M16.5 12A4.5 4.5 0 0014 8v8a4.5 4.5 0 002.5-4z" />
+                            </svg>
+                            <svg class="muted-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3 9v6h4l5 5V4L7 9H3z" />
+                                <path d="M16 9l6 6M22 9l-6 6" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Letter -->
+        <section id="letter" class="letter section">
+            <div class="letter-card">
+                <div class="letter-header">
+                    <span class="letter-badge">Son Söz</span>
+                    <h2 class="letter-title">Kardeşim Gibi</h2>
+                </div>
+                <div class="letter-content">
+                    <p>Sevgili Arda,</p>
+                    <p>On yıl önce hayatıma girdiğinde, bunun ne kadar özel bir yolculuğun başlangıcı olduğunu
+                        bilmiyordum. Şimdi geriye baktığımda, paylaştığımız her anın, her gülüşün, her zorluğun bizi
+                        bugünkü biz yaptığını görüyorum.</p>
+                    <p>Sen sadece bir arkadaş değilsin. Ailem olmayı seçtiğim insansın. Mutluluk Şırıngası'nı 48 kez üst
+                        üste dinlediğimiz o geceyi hatırlıyor musun? İşte o an, gerçek kardeşliğin ne demek olduğunu
+                        anladım.</p>
+                    <p>Aynı takımda, aynı yolda yürümeye devam edeceğiz. Çünkü sen benim kardeşimsin—seçtiğim, bulduğum,
+                        kaybetmeyeceğim kardeşim.</p>
+                    <p class="letter-signature">Sonsuza kadar yanında,<br><strong>Göktürk</strong></p>
+                </div>
+                <div class="letter-footer">
+                    <p class="letter-hint">💾 Bu sayfayı yer işaretlerine ekleyerek her zaman bu anılara dönebilirsin.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Celebration Section -->
+        <section id="celebration" class="celebration section">
+            <div class="celebration-content">
+                <div class="celebration-badge">🎉 10 Yıl 🎉</div>
+                <h2 class="celebration-title">Kutlama Zamanı!</h2>
+                <p class="celebration-text">10 yıllık bu muhteşem dostluğu kutlamak için</p>
+                <button id="confetti-btn" class="btn-celebration" aria-label="Confetti patlat">
+                    <span>🎊</span>
+                    <span>Kutla!</span>
+                    <span>🎊</span>
+                </button>
+            </div>
+            <canvas id="confetti-canvas" class="confetti-canvas"></canvas>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="share-section">
+                <h3 class="share-title">Bu Hikayeyi Paylaş</h3>
+                <p class="share-text" id="share-text">Göktürk & Arda - 10 yıllık kardeşlik hikayesi 🤝</p>
+                <button class="btn-secondary" id="copy-share" aria-label="Paylaşım metnini kopyala">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" />
+                        <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+                    </svg>
+                    <span>Kopyala</span>
+                </button>
+            </div>
+            <div class="qr-placeholder">
+                <div class="qr-box" aria-label="QR kod alanı">[QR]</div>
+                <p>Sayfayı paylaşmak için QR kodu buraya ekleyebilirsin</p>
+            </div>
+            <div class="footer-signature">
+                <p>Bu sayfa özel olarak hazırlandı.</p>
+                <p class="footer-date">Aralık 2025</p>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Music Player -->
+    <div id="music-player" class="music-player" aria-label="Müzik oynatıcı">
+        <button class="music-toggle" id="music-toggle" aria-label="Müziği aç/kapat">
+            <svg class="music-play" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z" />
+            </svg>
+            <svg class="music-pause" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6 4h4v16H6zM14 4h4v16h-4z" />
+            </svg>
+        </button>
+        <div class="music-info">
+            <span class="music-title">Mutluluk Şırıngası</span>
+            <span class="music-artist">Sanjar</span>
+        </div>
+        <input type="range" class="music-volume" id="music-volume" min="0" max="100" value="50"
+            aria-label="Ses seviyesi">
+    </div>
+
+    <!-- Photo Modal -->
+    <div id="photo-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <button class="modal-close" id="modal-close" aria-label="Kapat">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+        </button>
+        <div class="modal-content">
+            <img id="modal-image" src="" alt="Büyük fotoğraf">
+        </div>
+    </div>
+
+    <!-- Highlight Modal -->
+    <div id="highlight-modal" class="modal highlight-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <button class="modal-close" id="highlight-modal-close" aria-label="Kapat">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+        </button>
+        <div class="highlight-modal-content">
+            <img id="highlight-modal-image" src="" alt="">
+            <div class="highlight-modal-text">
+                <h3 id="highlight-modal-title"></h3>
+                <p id="highlight-modal-story"></p>
+            </div>
+        </div>
+    </div>
+
+    <audio id="bg-music" preload="auto" loop></audio>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
