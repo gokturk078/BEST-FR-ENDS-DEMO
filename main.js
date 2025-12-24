@@ -42,12 +42,10 @@ const CONFIG = {
             "images/WhatsApp Image 2025-12-24 at 01.52.28 (2).jpeg",
             "images/WhatsApp Image 2025-12-24 at 01.52.29.jpeg"
         ],
-        video: "images/Arkadaşlık_Anıları_İçin_AI_Video_Oluşturma.mp4",
         audio: "images/mp3indirdur-Sanjar-Mutluluk-Siringasi-2.mp3"
     },
 
-    // Highlight cards content
-    // Highlight cards content
+    // Highlight cards (EVENTS - for "Kardeşlik Anları")
     highlights: [
         { icon: "smile-plus", title: "İlk Büyük Gülüş", desc: "Birbirimizi ilk kez güldürdüğümüz o an", story: "O gün, sıradan bir gündü aslında. Ama senin o beklenmedik esprin her şeyi değiştirdi. O günden beri, gülmek seninle çok daha kolay oldu. İşte o an, gerçek bir dostluğun başlangıcıydı." },
         { icon: "shield", title: "Krizi Beraber Atlattık", desc: "En zor günde yan yana", story: "Hayat bazen sert vurur. Ama o darbeleri tek başına almak zorunda olmadığımı seninle öğrendim. O zor günde yanımda olduğun için, kardeşim, asla unutmayacağım." },
@@ -61,9 +59,8 @@ const CONFIG = {
 // ============================================
 // App State
 // ============================================
-let assets = { photos: [], video: null, audio: null };
+let assets = { photos: [], audio: null };
 let bgMusic = null;
-let mainVideo = null;
 let originalMusicVolume = 0.5;
 
 // ============================================
@@ -158,7 +155,6 @@ function showMainContent() {
     initHero();
     initStory();
     initHighlights();
-    initVideo();
     initMusicPlayer();
     initScrollAnimations();
     $('#music-player').classList.add('visible');
@@ -285,85 +281,6 @@ function closeHighlightModal() {
     modal.classList.remove('visible');
     modal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
-}
-
-// ============================================
-// Video Section
-// ============================================
-function initVideo() {
-    mainVideo = $('#main-video');
-    const source = mainVideo.querySelector('source');
-    if (assets.video) {
-        source.src = assets.video;
-        mainVideo.load();
-        // Set poster from photos
-        if (assets.photos.length > 2) {
-            mainVideo.poster = assets.photos[2];
-        }
-    }
-    const overlay = $('#video-overlay');
-    const playBtn = $('#video-play-btn');
-    const controls = $('#video-controls');
-    const playPauseBtn = $('#vid-play-pause');
-    const progressInput = $('#vid-progress');
-    const progressFill = $('#progress-fill');
-    const muteBtn = $('#vid-mute');
-
-    playBtn.addEventListener('click', () => {
-        mainVideo.play();
-        overlay.classList.add('hidden');
-        controls.classList.add('visible');
-        playPauseBtn.classList.add('playing');
-        duckMusic();
-    });
-
-    playPauseBtn.addEventListener('click', () => {
-        if (mainVideo.paused) {
-            mainVideo.play();
-            playPauseBtn.classList.add('playing');
-            duckMusic();
-        } else {
-            mainVideo.pause();
-            playPauseBtn.classList.remove('playing');
-            restoreMusic();
-        }
-    });
-
-    mainVideo.addEventListener('timeupdate', () => {
-        const pct = (mainVideo.currentTime / mainVideo.duration) * 100 || 0;
-        progressInput.value = pct;
-        progressFill.style.width = pct + '%';
-    });
-
-    mainVideo.addEventListener('ended', () => {
-        playPauseBtn.classList.remove('playing');
-        overlay.classList.remove('hidden');
-        controls.classList.remove('visible');
-        restoreMusic();
-    });
-
-    progressInput.addEventListener('input', () => {
-        const time = (progressInput.value / 100) * mainVideo.duration;
-        mainVideo.currentTime = time;
-    });
-
-    muteBtn.addEventListener('click', () => {
-        mainVideo.muted = !mainVideo.muted;
-        muteBtn.classList.toggle('muted', mainVideo.muted);
-    });
-}
-
-function duckMusic() {
-    if (bgMusic && !bgMusic.paused) {
-        originalMusicVolume = bgMusic.volume;
-        bgMusic.volume = Math.max(0, originalMusicVolume * 0.2);
-    }
-}
-
-function restoreMusic() {
-    if (bgMusic) {
-        bgMusic.volume = originalMusicVolume;
-    }
 }
 
 // ============================================
